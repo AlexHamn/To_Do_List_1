@@ -1,0 +1,12 @@
+    * {
+        font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+        list-style: none;
+    }
+    
+    body {
+        background-color: whitesmoke;
+    }
+    
+    .hello {
+        color: rebeccapurple;
+    }
