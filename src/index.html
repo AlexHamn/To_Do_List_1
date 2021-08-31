@@ -8,35 +8,33 @@
 </head>
 
 <body>
-    <img src="#" alt="logo" srcset="#">
-    <h1>minimalist</h1>
-    <section>
+    <header>
+        <h1>minimalist</h1>
+    </header>
+    <section id="content">
         <article id="list">
-            <div>
-                <h2>Demo</h2>
-                <button>*</button>
+            <div id="title" class="item">
+                <h2>Today's To Do</h2>
+                <button id="resetList">↻</button>
             </div>
-            <div>
-                <form action="">
+            <div id="input">
+                <form action="post" class="item" data-new-task-form>
                     <input type="text" id="addToList" placeholder="Add to your list...">
-                    <button>+</button>
+                    <button type="submit">↲</button>
                 </form>
             </div>
-            <ul id="list">
-                <li>
-                    <input type="checkbox" id='task1'>
-                    <label for="task1">task1</label>
-                </li>
-                <li>
-                    <input type="checkbox" id='task2'>
-                    <label for="task2">task2</label>
-                </li>
-            </ul>
-            <div>
-                <button>Clear</button>
+            <ul id="tasks" data-tasks-list></ul>
+            <div id="clear">
+                <button id="clearButton">Clear all completed</button>
             </div>
         </article>
     </section>
+    <template id="taskTemplate">
+        <li>
+            <input type="checkbox">
+            <label></label>
+        </li>
+    </template>
 </body>
 
 </html>
