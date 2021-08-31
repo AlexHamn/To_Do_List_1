@@ -4,10 +4,10 @@ const newTaskForm = document.querySelector('[data-new-task-form]');
 const tasksList = document.getElementById('tasks');
 
 const LOCAL_STORAGE_TASKS_KEY = 'tasks.list';
-let tasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TASKS_KEY)) || [];
+let tasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TASKS_KEY)) || [{ id: 30, task: 'task1', complete: false }, { id: 71, task: 'task2', complete: false }, { id: 88, task: 'task3', complete: false }];
 
 function createTask(task) {
-  return { id: Date.now().toString(), task, complete: false };
+  return { id: Math.floor(Math.random() * 100), task, complete: false };
 }
 
 function clearElement(element) {
