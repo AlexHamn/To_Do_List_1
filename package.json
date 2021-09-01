@@ -1,0 +1,35 @@
+{
+    "name": "webpack-demo",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "watch": "webpack --watch",
+        "start": "webpack serve --open",
+        "build": "webpack"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "babel-eslint": "^10.1.0",
+        "css-loader": "^6.2.0",
+        "eslint": "^7.32.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-plugin-import": "^2.24.2",
+        "hint": "^6.1.4",
+        "html-webpack-plugin": "^5.3.2",
+        "style-loader": "^3.2.1",
+        "stylelint": "^13.13.1",
+        "stylelint-config-standard": "^21.0.0",
+        "stylelint-csstree-validator": "^1.9.0",
+        "stylelint-scss": "^3.20.1",
+        "webpack": "^5.38.1",
+        "webpack-cli": "^4.7.2",
+        "webpack-dev-server": "^4.0.0"
+    },
+    "dependencies": {
+        "lodash": "^4.17.21"
+    }
+}

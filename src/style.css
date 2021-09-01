@@ -1,0 +1,87 @@
+* {
+  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+  list-style: none;
+  color: dimgray;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  color: black;
+  font-weight: 200;
+}
+
+h2 {
+  margin-left: 1rem;
+  font-weight: 100;
+}
+
+button {
+  all: unset;
+  padding: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+form input {
+  all: unset;
+  margin-left: 1rem;
+}
+
+form input::placeholder {
+  font-style: italic;
+}
+
+#content {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#input {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+#list {
+  background: white;
+  width: 40%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#title {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+
+  /* height: 2%; */
+}
+
+#tasks {
+  padding: unset;
+  margin: unset;
+}
+
+li {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+[type='checkbox']:checked + label {
+  text-decoration: line-through;
+}
+
+#clear {
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+}
