@@ -1,28 +1,26 @@
 import './style.css';
+import clearElement from './statusUpdate';
 
 const newTaskForm = document.querySelector('[data-new-task-form]');
 const tasksList = document.getElementById('tasks');
 
 const LOCAL_STORAGE_TASKS_KEY = 'tasks.list';
-let tasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TASKS_KEY)) || [{ id: 30, task: 'task1', complete: false }, { id: 71, task: 'task2', complete: false }, { id: 88, task: 'task3', complete: false }];
+let tasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TASKS_KEY)) || [];
 
-function createTask(task) {
-  return { id: Math.floor(Math.random() * 100), task, complete: false };
-}
-
-function clearElement(element) {
-  while (element.firstChild) {
-    element.removeChild(element.firstChild);
-  }
-}
+const taskInput = document.getElementById('addToList');
+taskInput.value = null;
 
 function save() {
   localStorage.setItem(LOCAL_STORAGE_TASKS_KEY, JSON.stringify(tasks));
 }
 
+function createTask(task) {
+  return { id: Date.now().toString(), task, complete: false };
+}
+
 const taskTemplate = document.getElementById('taskTemplate');
 
-function renderTasks() {
+function renderTask() {
   clearElement(tasksList);
   tasks.forEach((task) => {
     const taskElement = document.importNode(taskTemplate.content, true);
@@ -39,9 +37,6 @@ function renderTasks() {
   save();
 }
 
-const taskInput = document.getElementById('addToList');
-taskInput.value = null;
-
 newTaskForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const task = taskInput.value;
@@ -49,7 +44,7 @@ newTaskForm.addEventListener('submit', (e) => {
   const newTask = createTask(task);
   tasks.push(newTask);
   taskInput.value = null;
-  renderTasks();
+  renderTask();
 });
 
 tasksList.addEventListener('click', (e) => {
@@ -63,14 +58,14 @@ const clearButton = document.getElementById('clearButton');
 clearButton.addEventListener('click', () => {
   tasks = tasks.filter((task) => !task.complete);
   save();
-  renderTasks();
+  renderTask();
 });
 
 const resetList = document.getElementById('resetList');
 resetList.addEventListener('click', () => {
   tasks = null;
   localStorage.clear();
-  renderTasks();
+  renderTask();
 });
 
-renderTasks();
+renderTask();
