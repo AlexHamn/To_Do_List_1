@@ -5,7 +5,7 @@
 
 This is achieved by using JavaScript objects and arrays. Also, the DOM is dynamically modified.
 
-![screenshot](../To_Do_List_1/src/SS/ksnip_20210904-131616.png)
+![screenshot](src/SS/ksnip_20210904-131616.png)
 
 "To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete. This is a simple website that allows for doing just that; it was built using ES6 and Webpack!
 
