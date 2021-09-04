@@ -4,6 +4,11 @@
   color: dimgray;
 }
 
+input[type='text'] {
+  all: unset;
+  margin-left: 1rem;
+}
+
 body {
   background-color: whitesmoke;
 }
@@ -28,6 +33,14 @@ button {
   padding: 1rem;
   cursor: pointer;
   user-select: none;
+}
+
+li form {
+  width: 80%;
+}
+
+#txt {
+  width: 100%;
 }
 
 form input {
@@ -70,6 +83,7 @@ form input::placeholder {
 li {
   padding: 1rem;
   border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+  display: flex;
 }
 
 [type='checkbox']:checked + label {
