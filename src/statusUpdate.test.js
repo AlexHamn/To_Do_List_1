@@ -2,8 +2,14 @@
  * @jest-environment jsdom
  */
 
-import { createTask, updateStatus, tasks } from './statusUpdate';
-const { expect, it } = require('@jest/globals');
+import {
+  clearElement,
+  createTask,
+  updateStatus,
+  taskInput,
+  tasks,
+} from './statusUpdate';
+const { expect, it, describe } = require('@jest/globals');
 
 jest.mock('./statusUpdate');
 
@@ -12,7 +18,7 @@ test('use jsdom in this test file', () => {
   expect(element).not.toBeNull();
 });
 
-describe('creates task', () => {
+describe('adds tasks to list', () => {
   it('creates a task', () => {
     updateStatus();
     expect(tasks[0].task).toBe('mockTask');

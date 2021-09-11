@@ -5,13 +5,11 @@ function clearElement(element) {
 }
 
 const taskInput = 'mockTask';
-const LOCAL_STORAGE_TASKS_KEY = 'tasks.list';
-/* eslint-disable import/no-mutable-exports */
 let tasks = [];
 
 function createTask(task) {
   return {
-    id: Date.now().toString(), task, complete: false, overwrite: false,
+    id: Date.now().toString(), task, complete: true, overwrite: true,
   };
 }
 
@@ -23,7 +21,7 @@ const updateStatus = (e) => {
   tasks.push(newTask);
 };
 
-export const updateTask = (e) => {
+const updateTask = (e) => {
   const task = e.target.children[0].value;
   tasks = tasks.filter((task) => task);
   if (task !== null || task !== '') {
@@ -32,18 +30,10 @@ export const updateTask = (e) => {
   }
 };
 
-export function clearCompleted() {
-  tasks = tasks.filter((task) => !task.complete);
-}
-
-export function clearOverwrite() {
-  tasks = tasks.filter((task) => !task.overwrite);
-}
-
-export function resetTasks() {
-  tasks = [];
-}
-
 module.exports = {
-  clearElement, createTask, updateStatus, taskInput, tasks,
+  clearElement,
+  createTask,
+  updateStatus,
+  taskInput,
+  tasks,
 };
