@@ -13,6 +13,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.2.0",
     "eslint": "^7.32.0",
@@ -31,6 +32,9 @@
     "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
+    "@jest/globals": "^27.1.1",
+    "jest-environment-jsdom": "^27.1.1",
+    "jsdom": "^17.0.0",
     "lodash": "^4.17.21"
   },
   "main": "webpack.config.js",

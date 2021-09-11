@@ -1,30 +1,27 @@
-export default function clearElement(element) {
+function clearElement(element) {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
 }
 
-export const taskInput = document.getElementById('addToList');
-export const LOCAL_STORAGE_TASKS_KEY = 'tasks.list';
+const taskInput = 'mockTask';
+const LOCAL_STORAGE_TASKS_KEY = 'tasks.list';
 /* eslint-disable import/no-mutable-exports */
-export let tasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TASKS_KEY)) || [];
+let tasks = [];
 
-export function createTask(task) {
+function createTask(task) {
   return {
     id: Date.now().toString(), task, complete: false, overwrite: false,
   };
 }
 
-export const updateStatus = (e) => {
+const updateStatus = (e) => {
   if (e) { e.preventDefault(); }
-  const task = taskInput.value;
+  const task = taskInput;
   if (task == null || task === '') return;
   const newTask = createTask(task);
   tasks.push(newTask);
-  taskInput.value = null;
 };
-
-console.log(updateStatus());
 
 export const updateTask = (e) => {
   const task = e.target.children[0].value;
@@ -47,4 +44,6 @@ export function resetTasks() {
   tasks = [];
 }
 
-module.exports = { clearElement, createTask };
+module.exports = {
+  clearElement, createTask, updateStatus, taskInput, tasks,
+};
