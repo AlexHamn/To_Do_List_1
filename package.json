@@ -4,8 +4,8 @@
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet) # To_Do_list",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --watch",
+    "test": "jest --coverage",
+    "watch": "jest --watch *.js",
     "start": "webpack serve --open",
     "build": "webpack"
   },
@@ -13,6 +13,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.2.0",
     "eslint": "^7.32.0",
@@ -20,6 +21,7 @@
     "eslint-plugin-import": "^2.24.2",
     "hint": "^6.1.4",
     "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.1.1",
     "style-loader": "^3.2.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
@@ -30,6 +32,9 @@
     "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
+    "@jest/globals": "^27.1.1",
+    "jest-environment-jsdom": "^27.1.1",
+    "jsdom": "^17.0.0",
     "lodash": "^4.17.21"
   },
   "main": "webpack.config.js",

@@ -16,7 +16,7 @@ export function createTask(task) {
 }
 
 export const updateStatus = (e) => {
-  e.preventDefault();
+  if (e) { e.preventDefault(); }
   const task = taskInput.value;
   if (task == null || task === '') return;
   const newTask = createTask(task);
@@ -44,3 +44,5 @@ export function clearOverwrite() {
 export function resetTasks() {
   tasks = [];
 }
+
+module.exports = { clearElement, createTask };
