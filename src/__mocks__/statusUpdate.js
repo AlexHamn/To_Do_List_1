@@ -5,7 +5,7 @@ function clearElement(element) {
 }
 
 const taskInput = 'mockTask';
-let tasks = [];
+const tasks = [];
 
 function createTask(task) {
   return {
@@ -19,15 +19,6 @@ const updateStatus = (e) => {
   if (task == null || task === '') return;
   const newTask = createTask(task);
   tasks.push(newTask);
-};
-
-const updateTask = (e) => {
-  const task = e.target.children[0].value;
-  tasks = tasks.filter((task) => task);
-  if (task !== null || task !== '') {
-    const newTask = createTask(task);
-    tasks.push(newTask);
-  }
 };
 
 module.exports = {

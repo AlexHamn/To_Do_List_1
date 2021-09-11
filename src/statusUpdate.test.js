@@ -3,12 +3,10 @@
  */
 
 import {
-  clearElement,
-  createTask,
   updateStatus,
-  taskInput,
   tasks,
 } from './statusUpdate';
+
 const { expect, it, describe } = require('@jest/globals');
 
 jest.mock('./statusUpdate');

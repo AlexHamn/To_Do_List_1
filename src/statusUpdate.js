@@ -24,8 +24,6 @@ export const updateStatus = (e) => {
   taskInput.value = null;
 };
 
-console.log(updateStatus());
-
 export const updateTask = (e) => {
   const task = e.target.children[0].value;
   tasks = tasks.filter((task) => task);
